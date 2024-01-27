@@ -1,0 +1,52 @@
+Board Format
+
+    {
+        "rows": [
+            [
+                {
+                    "type": "bishop",
+                    "color": true,
+                    "moves": 0
+                },
+                null
+            ],
+            [
+                null,
+                {
+                    "type": "king",
+                    "color": false,
+                    "moves": 0
+                }
+            ]
+        ]
+    }
+
+_________________________________________________________________________
+
+Game Format
+
+    {
+        "turn": true,
+        "time": null/0,
+        "moves": [
+            //board object from after first move,
+            //board object from after second move,
+            //etc.
+        ]    
+    }
+
+_________________________________________________________________________
+
+Engine Notes
+
+    Take a board object and a move, generate a new board after making said move.
+    Can give a list of moves for a given board object and a given piece.
+    Engine can determine if a board object is in check, checkmate, or stalemate.
+
+_________________________________________________________________________
+
+UI Notes
+
+    Start with a console implementation, don't worry about HTML and CSS yet.
+    Implement pass and play mode only, don't try anything with AI or online multiplayer.
+    Use chess notation to describe moves (e.g. F3-F4)

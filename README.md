@@ -1,2 +1,2 @@
-# NotChess
+# Not Chess
 chess

@@ -1,0 +1,25 @@
+Things to consider:
+
+    game should probably be programmed in JS
+    game should have the same rules as normal chess
+    use MVC structure
+
+    Model
+
+        saving and loading (using JSON to transfer between different engines)
+        come up with a JSON format that stores the save file independently of the game itself
+
+    View
+
+        multiplayer (online and pass and play) and singleplayer (vs AI) modes
+        There will be a visual UI and a console based UI
+        visual UI will use HTML, CSS, there should be an animation where the piece slides from one square to the next
+        there will be a notice to the player if the king is in danger
+
+    Controller
+
+        controller (not chess engine) could be used in different programs
+        AI will be a neural network, the architecture of which will be borrowed
+        rules will include esoteric rules like castling, pawn promotion, and en passant
+        game will have to take into account stalemate, in addition to checks and checkmate
+        add timed and untimed settings and include in the save data
