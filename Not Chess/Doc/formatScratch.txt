@@ -5,7 +5,7 @@ Board Format
             [
                 {
                     "type": "bishop",
-                    "color": true,
+                    "color": false,
                     "moves": 0
                 },
                 null
@@ -14,7 +14,7 @@ Board Format
                 null,
                 {
                     "type": "king",
-                    "color": false,
+                    "color": true,
                     "moves": 0
                 }
             ]
@@ -42,6 +42,9 @@ Engine Notes
     Take a board object and a move, generate a new board after making said move.
     Can give a list of moves for a given board object and a given piece.
     Engine can determine if a board object is in check, checkmate, or stalemate.
+
+    write a function to generate the json object for a new game
+    engine and UI are separate files
 
 _________________________________________________________________________
 
