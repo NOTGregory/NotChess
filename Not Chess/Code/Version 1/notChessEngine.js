@@ -131,3 +131,7 @@ module.exports = {
 };
 
 // NOTE: Come up with way of representing moves includes promotion and castling
+// Move Format: [x1, y1, x2, y2, (optional: pawn promotion piece)]
+// Castling triggered if king moves over rook or rook moves over king on the same side
+
+// Implement code wherever stub comments are present.
