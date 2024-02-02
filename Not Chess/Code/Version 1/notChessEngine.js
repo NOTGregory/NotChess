@@ -1,5 +1,10 @@
-// creates a JSON object representing a new game in the Not Chess format
-function create() {
+const NORMAL = 0;
+const CHECK = 1;
+const CHECKMATE = 2;
+const STALEMATE = 3;
+
+// Creates a JSON object representing a new board in the Not Chess format
+function createBoard() {
 
     let rows = [];
 
@@ -49,8 +54,16 @@ function create() {
         }
     }
 
+    return rows;
+}
+
+// Creates a JSON object representing a new game in the Not Chess format
+function create() {
+
     let game = {
-        states: [rows],
+        states: [
+            createBoard()
+        ],
         turn: true,
         time: null
     };
@@ -58,6 +71,63 @@ function create() {
     return game;
 }
 
+// Returns a list of moves for a given piece
+function getMoves(board, x, y) {
+
+    // Allows the user to pass in either a game object or a single board object
+    if(board.states != null)
+        board = board.states[board.states.length - 1];
+
+    let moves = [];
+
+    // STUB
+
+    return moves;
+}
+
+// Returns the state of the game - See consts at top
+function getStatus(game) {
+    // STUB
+}
+
+// Executes a move
+function makeMove(board, move) {
+
+    // Ensures a deep copy
+    board = JSON.parse(JSON.stringify(board));
+
+    // Allows the user to pass in either a game object or a single board object
+
+    let game = null;
+
+    if(board.states != null) {
+        game = board;
+        board = game.states[game.states.length - 1];
+    }
+
+    // STUB
+
+    if(game != null) {
+
+        game.states.push(board);
+        game.turn = !game.turn;
+
+        return game;
+    }
+
+    return board;
+}
+
 module.exports = {
-    create
+    NORMAL,
+    CHECK,
+    CHECKMATE,
+    STALEMATE,
+    create,
+    createBoard,
+    getMoves,
+    getStatus,
+    makeMove
 };
+
+// NOTE: Come up with way of representing moves includes promotion and castling
