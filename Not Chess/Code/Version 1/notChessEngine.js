@@ -10,8 +10,30 @@ function create() {
                 rows[i][j] = null;
                 continue;
             }
+            let type = "pawn";
+
+            if(i == 0 || i == 7){
+                if(j == 0 || j == 7){
+                    type = "rook";
+                }
+                if(j == 1 || j == 6){
+                    type = "knight";
+                }
+                if(j == 2 || j == 5){
+                    type = "bishop";
+                }
+                if(j == 3){
+                    type = "queen";
+                }
+                if(j == 4){
+                    type = "king";
+                }
+            }
+
             rows[i][j] = {
-                color: i > 4
+                type,
+                color: i > 4,
+                moves: 0
             };
         }
     }
