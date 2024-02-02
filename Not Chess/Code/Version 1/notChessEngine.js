@@ -12,7 +12,7 @@ function create() {
             if(i >= 2 && i <= 5) {
 
                 rows[i][j] = null;
-                
+
                 continue;
             }
 
@@ -50,7 +50,7 @@ function create() {
     }
 
     let game = {
-        rows,
+        states: [rows],
         turn: true,
         time: null
     };
