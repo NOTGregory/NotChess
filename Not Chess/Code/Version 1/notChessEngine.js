@@ -90,6 +90,16 @@ function getStatus(game) {
     // STUB
 }
 
+function makeMoveSwap(board, move) {
+
+    let piece = board[move[0]][move[1]];
+
+    board[move[0]][move[1]] = null;
+    board[move[2]][move[3]] = piece;
+
+    piece.moves++;
+}
+
 // Executes a move
 function makeMove(board, move) {
 
@@ -106,6 +116,22 @@ function makeMove(board, move) {
     }
 
     // STUB
+
+    // begin
+
+    // implement castling here
+
+    // do the following if not castling:
+
+    makeMoveSwap(board, move);
+
+    if(move[4] != null) {
+        board[move[2]][move[3]].type = move[4];
+    }
+
+    // handle en passant
+
+    // end
 
     if(game != null) {
 
@@ -131,7 +157,7 @@ module.exports = {
 };
 
 // NOTE: Come up with way of representing moves includes promotion and castling
-// Move Format: [x1, y1, x2, y2, (optional: pawn promotion piece)]
+// Move Format: [row1, col1, row2, col2, (optional: pawn promotion piece)]
 // Castling triggered if king moves over rook or rook moves over king on the same side
 
 // Implement code wherever stub comments are present.
